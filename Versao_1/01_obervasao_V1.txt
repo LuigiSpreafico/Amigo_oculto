@@ -1,0 +1,24 @@
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Observações:
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+. Nesta versão é gerado um arquivo .txt para cada pessoa onde dentro tem o nome do seu amigo oculto / da sua amiga oculta. Teria de mandar para cada um o seu arquivo. Texto exemplo quando for mandar:
+
+Oi!
+
+Tudo tranquilo?
+
+No arquivo tem o nome do seu amigo oculto / da sua amiga oculta, só abrir para ver.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+. As exclamações no final de cada nome é para que todos os arquivos .txt tenham o mesmo número de caracteres, de forma que todos os arquivos tenham o mesmo tamanho. Isso porque como cada nome tem um número diferente de letras, acabariam tendo um arquivo com tamanho diferente. Dessa forma, eu poderia acabar olhando sem querer que um arquivo é maior ou menor que o outro (mesmo sem abrir o arquivo) e com isso ter uma dica de quem a pessoa tirou. Dessa forma, eu não terei nenhuma dica sobre quem alguém tirou sem querer, e tudo pode ficar bem protegido. A única forma de eu saber algo seria abrindo os arquivos gerados.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+. No arquivo "01_nome_das_pessoas_V1.txt" colocar cada nome em um linha (como no exemplo).
+
+-----------------------------------------------------------------------------------------------------------------------------
