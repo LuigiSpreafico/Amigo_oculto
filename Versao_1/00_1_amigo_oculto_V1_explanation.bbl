@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{Python}
+{Python} programming language description.
+\newblock \url{https://www.python.org}.
+\newblock Accessed: 2022-12-01.
+
+\bibitem{NumPy}
+{NumPy} python module description.
+\newblock \url{https://numpy.org/}.
+\newblock Accessed: 2022-12-01.
+
+\end{thebibliography}

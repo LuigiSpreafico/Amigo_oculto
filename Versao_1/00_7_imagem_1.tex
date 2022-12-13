@@ -1,0 +1,187 @@
+
+%%%%%%%% FIRST THING %%%%%%%%
+%%%%% CREATING THE MESH %%%%%
+
+%https://tex.stackexchange.com/questions/25642/how-to-draw-a-line-of-dots-in-tikz
+
+%https://tex.stackexchange.com/questions/45275/tikz-get-values-for-predefined-dash-patterns
+
+% From:
+% https://youtu.be/OCrO7jzavzA
+% Channel: Master Your Academic Skills
+% Video: latex tutorial: pgfplots tutorial: how to make a simple coordinate plot
+
+%https://tex.stackexchange.com/questions/395287/tikz-for-loop-with-2-statements/395289
+
+%\documentclass[border = 15 pt]{standalone}
+%\documentclass[border = 10 pt]{standalone}
+\documentclass[border = 5 pt]{standalone}
+
+\usepackage{multicol}
+
+\usepackage{enumerate}
+
+\usepackage{caption}
+
+\usepackage{color}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+\usepackage{float}
+
+\setlength\parindent{0pt}
+
+\usepackage{nopageno}
+
+\pagestyle{plain}
+
+%maths
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+%tikzpicture
+\usepackage{tikz}
+\usepackage{scalerel}
+\usepackage{pict2e}
+\usepackage{tkz-euclide}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns, arrows.meta}
+\usetikzlibrary{shadows}
+\usetikzlibrary{external}
+
+\usetikzlibrary{decorations.markings}
+
+%pgfplots
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+
+
+
+%colours
+\usepackage{xcolor}
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%%%%%
+
+\usepackage{graphicx}
+
+\usepackage{tikz-3dplot}
+
+%\usepackage{circuitikz}
+\usepackage[RPvoltages]{circuitikz}
+
+\usetikzlibrary{shapes.geometric, arrows.meta, decorations.markings}
+
+\pgfplotsset{compat = 1.17}
+
+\tdplotsetmaincoords{60}{120}
+
+\tikzset{
+LM/.style = {very thin,
+        {Bar[]Stealth}-%
+        {Stealth[]Bar}
+            },
+% other common sty definitions like
+every edge quotes/.append style= {font=\footnotesize}
+        }
+
+\usetikzlibrary{shapes.geometric,arrows,fit,matrix,positioning,shapes.multipart}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[utf8]{inputenc}
+%\usepackage{tikz}
+
+%\usetikzlibrary{shapes.geometric,arrows,fit,matrix,positioning,shapes.multipart}
+
+%\tikzset
+%{
+%        process/.style={rectangle, minimum width=2cm, minimum height=1cm, align=center, text width=2cm, draw},
+%        arrow/.style={thick, ->, >=stealth},
+%        decision/.style ={diamond, draw=black, minimum width=1cm, minimum height=1cm, text badly centered, node distance=3cm, inner sep=0pt}
+%}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle =110, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=blue!30]
+
+\tikzstyle{iosmall} = [trapezium, trapezium left angle=70, trapezium right angle =110, minimum width=2cm, minimum height=1cm, text centered, text width=2cm, draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=orange!30]
+
+\tikzstyle{processbig} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=6cm, draw=black, fill=orange!30]
+
+\tikzstyle{BigProcess} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+
+% Testing 1
+%\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=green!30]
+
+% Testing 2
+\tikzstyle{decision} = [diamond, aspect=2.0, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+\tikzstyle{BigDecision} = [diamond, aspect=2.0, minimum width=3cm, minimum height=1cm, text centered, text width=6cm, draw=black, fill=green!30]%***
+
+%\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+\tikzstyle{arrow} = [thick,->, >=stealth]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{verbatim}
+%barra invertida \texttt{\symbol{92}}
+%\texttt{\symbol{92}documentclass[]\string{\string}}
+
+\usepackage{verbatimbox}
+
+\begin{document}
+
+\begin{myverbbox}{\txt}
+.txt
+\end{myverbbox}
+\begin{myverbbox}{\fs}
+file_string
+\end{myverbbox}
+\begin{myverbbox}{\nnfs}
+new_new_file_string
+\end{myverbbox}
+
+\begin{tikzpicture}[node distance=2cm]
+
+% we can also use:
+% "above of", "right of" and "left of"
+
+\node (start) [startstop] {Start};
+
+\node (in1) [io, below of=start] {Pegar os nomes no arquivo \txt\ e\\ armazenar na\\ variável \fs\ como uma lista.};
+
+\node (pro1) [processbig, below of=in1, yshift=-0.0cm] {Ordenar a lista \fs.};
+
+\node (pro2) [processbig, below of=pro1, yshift=-0.0cm] {Criar um vetor para\\ embaralhar a ordem dos nomes.};
+
+\node (pro3) [processbig, below of=pro2, yshift=-0.0cm] {Utilizar a lista com os nomes e o vetor para criar uma nova lista com os nomes embaralhados.};
+
+\node (in2) [io, below of=pro3, yshift=-0.5cm] {Utilizar a lista \nnfs\ para criar um\\ arquivo \txt\ para cada\\ pessoa com o nome do seu amigo oculto.};
+
+\node (stop) [startstop, below of=in2, yshift=-0.5cm] {Stop};
+
+% Now the arrows:
+
+\draw [arrow] (start) -- (in1);
+
+\draw [arrow] (in1) -- (pro1);
+
+\draw [arrow] (pro1) -- (pro2);
+
+\draw [arrow] (pro2) -- (pro3);
+
+\draw [arrow] (pro3) -- (in2);
+
+\draw [arrow] (in2) -- (stop);
+
+\end{tikzpicture}
+
+\end{document}
+

@@ -1,0 +1,324 @@
+
+%The documentclass that we are going to we:
+\documentclass[10pt,a4paper,fleqn]{article}
+%\documentclass[10pt,a5paper,fleqn]{article}
+
+\makeatletter
+%%%To add dots in the section for the article class:
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+%%%To remove the dots:
+%\renewcommand\@dotsep{1000}
+\makeatother
+
+%%No longer required (from what I read on the internet, I might be mistaken).
+%\usepackage[utf8]{inputenc}
+
+%Packages for writing math:
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%Putting it simple, you need to put images.
+\usepackage{graphicx}
+
+%To write using more than on column.
+\usepackage{multicol}
+\usepackage{color}
+\setlength{\columnseprule}{2pt}
+\def\columnseprulecolor{\color{black}}
+%\begin{multicols}{2}
+%
+%\end{multicols}
+
+%To be able to use enumerate.
+%\usepackage{enumerate}
+\usepackage{enumitem}
+
+%The caption package provides many ways to customise the captions in floating environments like figure and table, and cooperates with many other packages.
+\usepackage{caption}
+
+%The package also provides the H float modifier option of the obsolete here package. You can select this as automatic default with \floatplacement{figure}{H}. It is used to make sure that an image stays put where I want.
+\usepackage{float}
+
+%The hyperref package is used to handle cross-referencing commands in LATEX to produce hypertext links in the document. So that you can click on the text and it takes you to somewhere.
+%So that I can click on the Contents section, and it takes me to the section I want:
+\usepackage{hyperref}
+
+%%\pagestyle{empty}
+%%https://texfaq.org/FAQ-emptynum
+%\parindent 0px
+
+%%No page numbers:
+%\usepackage{nopageno}
+
+%In case, you don’t want the complete document to be indented, set the indentation length to zero with the command \setlength{\parindent}{0pt}.
+%In the case where you want to indent a paragraph that is not indented, use the command \indent right above it. Please note that this command will only have an effect when \parindent is set to zero.
+%\setlength\parindent{0pt}
+
+%To change the border of our document. To change the geometry of our document.
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+%%To change the font we are going to be using. Number 1.
+%% Choose one of the following fonts; obs.: use either XeLaTeX or LuaLaTeX
+%\usepackage{fontspec}
+%\setmainfont{YuKyokasho}
+%\setmonofont{Hiragino Mincho ProN}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+%\setmonofont{Hiragino Mincho ProN}
+
+%%To change the font we are going to be using. Number 2.
+%% Choose one of the following fonts; obs.: use either XeLaTeX or LuaLaTeX
+%\usepackage{xeCJK}
+%\setCJKmainfont{YuKyokasho}
+%\setCJKsansfont{Hiragino Mincho ProN}
+%\setCJKmonofont{Hiragino Mincho ProN}
+
+%%To put furigana when writing in Japanese.
+%\usepackage{ruby}
+%\renewcommand{\rubysep}{0.2ex}
+%\ruby{学}{がく}
+%\ruby{}{}
+
+%tikzpicture
+\usepackage{tikz}
+\usepackage{scalerel}
+\usepackage{pict2e}
+\usepackage{tkz-euclide}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns, arrows.meta}
+\usetikzlibrary{shadows}
+\usetikzlibrary{external}
+%\usepackage{circuitikz}
+
+%pgfplots
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+
+%colours
+\usepackage{xcolor}
+
+%% Font packages
+%\usepackage[LGR,T1]{fontenc}
+%\usepackage{lmodern}
+%\usepackage{microtype}
+%\usepackage{upgreek}
+%\usepackage[misc]{ifsym}
+
+% Maths and science packages
+\usepackage{amsthm}
+\usetikzlibrary{positioning}
+\pgfplotsset{
+		compat=1.16, % the version, it is good because even if there is an update, the graph won't change the look.
+		samples=200, % the number of dots used to make the line.
+		clip=false,
+		my axis style/.style={%giving the name "my axis style"
+			axis x line=middle,
+			axis y line=middle,
+			legend pos=outer north east,
+			axis line style={
+				->,
+				very thick,
+			},
+			legend style={
+				font=\footnotesize
+			},
+			label style={
+				font=\footnotesize
+			},
+			tick label style={
+				font=\footnotesize
+			},
+			xlabel style={
+				at={
+					(ticklabel* cs:1)
+				},
+				anchor=west,
+				font=\footnotesize,
+			},
+			ylabel style={
+				at={
+					(ticklabel* cs:1)
+				},
+				anchor=west,
+				font=\footnotesize,
+			},
+			xlabel=$x$,
+			ylabel=$y$
+		},
+	}
+	\tikzset{
+		>=stealth
+	}
+
+%https://tex.stackexchange.com/questions/91201/change-the-appearance-of-grids-in-pgfplots
+% grid style
+\pgfplotsset{grid style={dashed,gray}}
+%https://tex.stackexchange.com/questions/207212/how-do-i-change-the-font-size-of-the-axis-tick-labels-in-pgfplots
+\pgfplotsset{every tick label/.append style={font=\footnotesize}}
+%https://tex.stackexchange.com/questions/518926/tikz-opacity-of-colours
+\usetikzlibrary{fadings}
+\tikzfading
+  [name = viesturs fading,
+   inner color = transparent!0,
+   outer color = transparent!100]
+
+%https://tex.stackexchange.com/questions/435557/tikzpicture-horizontal-curly-brace
+\usetikzlibrary{decorations.pathreplacing}
+
+%https://tex.stackexchange.com/questions/614746/avoid-overlapping-of-the-vertical-line-of-arrow-and-path-label-in-tikz
+\tikzset{
+LM/.style = {very thin,
+        {Bar[]Stealth}-%
+        {Stealth[]Bar}
+            },
+% other common sty definitions like
+every edge quotes/.append style= {font=\footnotesize}
+        }
+
+% Making the braket notation:
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\newcommand{\braketone}[2]{\left\langle #1 \middle| #2 \right\rangle}
+\newcommand{\brakettwo}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}
+
+% So that I can name the section of the bibliography with whatever I want:
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The packages:
+
+\usepackage{verbatim}
+
+\usepackage{listings}
+
+\usepackage{xcolor}
+
+\usepackage[brazil]{babel} %*****
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Code styles and colours:
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{electricpurple}{rgb}{0.75, 0.0, 1.0}
+\definecolor{backcolour}{rgb}{0.96,0.96,0.96}
+\definecolor{backbackcolour}{rgb}{0.96,0.96,0.96}
+\definecolor{theshadowcolor}{rgb}{0.25,0.25,0.25}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+%    stringstyle=\color{codepurple},
+    stringstyle=\color{electricpurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=10pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,% mudar aqui para o Python
+    tabsize=2,
+    frame=shadowbox,
+    frameround=ffff,
+%    rulesepcolor=\color{blue},
+%    rulesepcolor=\color{red},
+%    rulesepcolor=\color{black},
+    rulesepcolor=\color{theshadowcolor},
+    showlines=true,
+%    linewidth=0.5\linewidth,
+%	extendedchars=true,
+%	inputencoding=latin1,
+	literate=
+{á}{{\'a}}1
+{à}{{\`a}}1
+{ã}{{\~a}}1
+{é}{{\'e}}1
+{ê}{{\^e}}1
+{í}{{\'i}}1
+{ó}{{\'o}}1
+{õ}{{\~o}}1
+{ú}{{\'u}}1
+{ü}{{\"u}}1
+{ç}{{\c{c}}}1
+}
+
+%https://tex.stackexchange.com/questions/30512/how-to-insert-code-with-accents-with-listings
+
+\lstset{style=mystyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{forloop}
+\usepackage{calc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[most]{tcolorbox}
+
+\definecolor{mygray}{rgb}{0.5, 0.5, 0.5}
+
+\definecolor{capri}{rgb}{0.0, 0.75, 1.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\author{Luigi Spreafico}
+%\title{Programa de amigo oculto\\{\small (Versão 1)}}
+\title{{\Huge Programa de amigo oculto}\\{\normalsize (Versão 1)}}
+%\title{{\Huge Programa de amigo oculto}\\(Versão 1)}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\input{./00_2_language_Python_modules}
+
+\newpage
+
+\input{./00_3_explaning_the_program}
+
+\newpage
+
+\input{./00_4_some_observations}
+
+\newpage
+
+\input{./00_5_0_references}
+
+\newpage
+
+\input{./00_6_appendix_the_python_code}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

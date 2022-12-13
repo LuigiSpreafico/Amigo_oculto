@@ -1,0 +1,62 @@
+
+\section{Algumas observações}
+
+Nesta versão é gerado um arquivo .txt para cada pessoa onde dentro tem o nome do seu amigo oculto ou da sua amiga oculta.
+Teria de mandar para cada um o seu arquivo (por e-mail, whatsapp, ...).
+
+\begin{tcolorbox}[
+                 colback=white,
+                 colframe=black,
+                 sharp corners,
+                 boxrule=2pt,
+                 colbacktitle=white,
+                 coltitle = black,
+                 title=Exemplo de mensagem.]
+Oi!
+
+Tudo tranquilo?
+
+No arquivo tem o nome do seu amigo oculto ou da sua amiga oculta, só abrir para ver.
+\end{tcolorbox}
+
+Nas próximas versões o objetivo é de por exemplo:
+\begin{itemize}
+
+\item Colocar algo para podermos inserir os nomes das pessoas, seja pelo terminal, ou por uma interfacie gráfica.
+
+\item Colocar para enviar automaticamente para o e-mail das pessoas os resultados.
+
+\item Quando for rodar o programa (no começo, antes de tudo) apargar todos os arquivos que nao sejam os necessários (por exemplo, se você for rodar uma segunda vez com menos pessoas, nessa versão ele já vai ter gerado algum arquivo \texttt{.txt} referente a uma pessoa que não vai participar e você teria de apagar manualmente).
+
+\end{itemize}
+
+Além disso, com esse código temos que só terá um círculo, por exemplo, tendo 5 pessoas teriamos $$1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5 \rightarrow 1$$ e nunca $$1 \rightarrow 2 \rightarrow 1$$ e $$3 \rightarrow 5 \rightarrow 4 \rightarrow 3$$, e, ninguém tira a si mesmo.
+
+Outra observação a ser feita é que as exclamações no final de cada nome é para que todos os arquivos .txt tenham o mesmo número de caracteres,
+de forma que todos os arquivos tenham o mesmo tamanho.
+Isso porque como cada nome tem um número diferente de letras, acabariam tendo um arquivo com tamanho diferente.
+Dessa forma, eu poderia acabar olhando sem querer que um arquivo é maior ou menor que o outro (mesmo sem abrir o arquivo)
+e com isso ter uma dica de quem a pessoa tirou.
+Dessa forma, eu não terei nenhuma dica sobre quem alguém tirou sem querer, e tudo pode ficar bem protegido.
+A única forma de eu saber algo seria abrindo os arquivos gerados.
+
+E por fim, no arquivo \texttt{01\char`_nome\char`_das\char`_pessoas\char`_V1.txt} colocar cada nome em um linha (como no exemplo).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
