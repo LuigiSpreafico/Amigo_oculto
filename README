@@ -4,3 +4,13 @@ De forma bem simples o programa de amigo oculto tem o intuito de conseguir sorti
 Terá mais de uma versão, e cada versão irá ter um arquivo explicando de forma detalhada como funciona o programa, portanto, aqui eu irei me conter a explicação simples.
 
 Um última coisa a se comentar é que o programa será feito utilizando Python.
+
+A primeira versão é uma versão mais básica.
+Onde você tem de fornecer um arquivo .txt com os nomes dos participantes e o programa em Python irá embralhar e lhe devolver aquivos .txt para cada pessoa com o nome do amigo oculto dentro.
+Depois você mesmo terá de mandar os arquivos para as respectivas pessoas.
+
+A segunda versão você rodará o programa e com ele rodando você irá inserir os nomes dos participantes pelo terminal.
+Depois o programa em Python irá embralhar e lhe devolver aquivos .txt para cada pessoa com o nome do amigo oculto dentro.
+Depois você mesmo terá de mandar os arquivos para as respectivas pessoas.
+
+Obs.: A segunda versão ainda não tem um arquivo em PDF explicando o seu funcionamento.
